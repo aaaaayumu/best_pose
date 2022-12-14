@@ -1,24 +1,60 @@
-# README
+# データベース設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+| Column             | Type   | Options                   |
+|--------------------|--------|---------------------------|
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| body_height        | float  |                           |
+| body_weight        | float  |                           |
+| self_introduction  | text   |                           |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :posings
+- has_many :comments
+- has_many :likes
 
-* Configuration
+## posingsテーブル
 
-* Database creation
+| Column      | Type       | Options                        |
+|-------------|------------|--------------------------------|
+| group_id    | integer    | null: false                    |
+| category_id | integer    | null: false                    |
+| type_id     | integer    | null: false                    |
+| body_weight | float      |                                |
+| remarks     | text       |                                |
+| user        | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :comments
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+##　commentsテーブル 
 
-* Deployment instructions
+| Column  | Type       | Options                        |
+|---------|------------|--------------------------------|
+| content | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| posing  | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- has_many :likes
+- belongs_to :user
+- belongs_to :posing
+
+## likesテーブル
+
+| Column | Type       | Options                        |
+|--------|------------|--------------------------------|
+| user   | references | null: false, foreign_key: true |
+| posing | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :comment
