@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_12_21_020816) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.float "body_height"
-    t.float "body_weigtt"
+    t.float "body_weight"
     t.text "self_introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
