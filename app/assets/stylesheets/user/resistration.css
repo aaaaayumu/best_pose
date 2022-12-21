@@ -67,12 +67,13 @@
 .input_field {
   width: 70%;
   height: 30px;
+  margin-top: 5px;
 }
 
 .input_area {
   width: 70%;
   height: 100px;
-
+  margin-top: 5px;
 }
 
 .form_footer {
@@ -86,6 +87,7 @@
   border: none;
   border-radius: 5px;
   font-size: 20px;
+  font-weight: 600;
 }
 
 .return_btn {
@@ -102,6 +104,7 @@
 .return_btn a {
   text-decoration: none;
   color: black;
+  font-weight: 600;
 }
 
 .field_with_errors {
