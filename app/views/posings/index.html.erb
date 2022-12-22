@@ -1,14 +1,30 @@
 <header class="first_header">
   <div class="header_logo">
-     <a href="#">Best Pose</a>
+     <a href="/">Best Pose</a>
   </div>
   <ul class="header_lists">
-    <li><a href="#">ログイン</a></li>
-    <li><%= link_to 'ユーザー登録', new_user_registration_path %>
+    <% if user_signed_in? %>
+      <li><a href="#">ユーザー編集</a></li>
+      <li><a href="#">マイページ</a></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <li><a href="#">ポージング投稿</a></li>
+    <% else %>
+      <li><a href="#">ログイン</a></li>
+      <li><%= link_to 'ユーザー登録', new_user_registration_path %>
+    <% end %>
   </ul>
 </header>
 
 <div class="posing_index_main">
+  <div class="current_user_name_area">
+    <div class="current_user_name">
+      <% if user_signed_in? %>
+        ようこそ <a href="#"><%= current_user.nickname %></a> さん
+      <% else %>
+        未ログイン状態です
+      <% end %>
+    </div>
+  </div>
   <div class="app_explanation">
     <%= image_tag "posing.jpeg", class: "explanation_image" %>
     <div class="app_explanation_items">
