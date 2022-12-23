@@ -32,7 +32,7 @@
 }
 
 /*******************************
-ユーザー新規登録画面
+ユーザー新規登録画面、ログイン画面
 *******************************/
 
 .registration_main {
@@ -109,6 +109,12 @@
 
 .field_with_errors {
   display: contents;
+}
+
+.login-flash-message {
+  text-align: center;
+  margin-top: 20px;
+  color: red;
 }
 
 

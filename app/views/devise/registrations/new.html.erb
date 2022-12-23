@@ -1,8 +1,4 @@
-<header class="second_header">
-  <div class="second_header_logo">
-    <%= link_to 'Best Pose', root_path %>
-  </div>
-</header>
+<%= render 'shared/second_header' %>
 
 <%= form_with model: @user, url: "/users", class: 'registration_main', local: true do |f| %>
   <div class="form_wrapper">
@@ -52,6 +48,4 @@
   </div>
 <% end %>
 
-<footer class="second_footer">
-  BEST POSE
-</footer>
+<%= render 'shared/second_footer' %>
