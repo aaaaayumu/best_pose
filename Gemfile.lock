@@ -77,7 +77,6 @@ GEM
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
-    date (3.3.1)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -87,7 +86,15 @@ GEM
     devise-i18n (1.10.2)
       devise (>= 4.8.0)
     devise-i18n-views (0.3.7)
-    erubi (1.11.0)
+    diff-lcs (1.5.0)
+    erubi (1.12.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (2.22.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -103,11 +110,8 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
-      net-imap
-      net-pop
-      net-smtp
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -116,20 +120,9 @@ GEM
     minitest (5.16.3)
     msgpack (1.6.0)
     mysql2 (0.5.4)
-    net-imap (0.3.2)
-      date
-      net-protocol
-    net-pop (0.1.2)
-      net-protocol
-    net-protocol (0.2.1)
-      timeout
-    net-smtp (0.3.3)
-      net-protocol
     nio4r (2.5.8)
     nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
-    nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.5)
@@ -140,7 +133,7 @@ GEM
       pry (>= 0.10.4)
     public_suffix (5.0.1)
     puma (3.12.6)
-    racc (1.6.1)
+    racc (1.6.2)
     rack (2.2.4)
     rack-proxy (0.7.4)
       rack
@@ -184,6 +177,23 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (4.0.2)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
+    rspec-support (3.12.0)
     ruby_dep (1.5.0)
     rubyzip (2.3.2)
     sass (3.7.4)
@@ -215,7 +225,6 @@ GEM
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
-    timeout (0.3.1)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -245,7 +254,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
@@ -254,14 +262,18 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  factory_bot_rails
+  faker
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
+  mail (= 2.7.1)
   mysql2 (>= 0.4.4)
   pg
   pry-rails
   puma (~> 3.11)
   rails (~> 6.0.0)
   rails-i18n
+  rspec-rails (~> 4.0.0)
   sass-rails (~> 5)
   selenium-webdriver
   spring
