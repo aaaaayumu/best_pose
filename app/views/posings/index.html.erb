@@ -7,7 +7,7 @@
       <li><a href="#">ユーザー編集</a></li>
       <li><a href="#">マイページ</a></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      <li><a href="#">ポージング投稿</a></li>
+      <li><%= link_to 'ポージング投稿', new_posing_path %></li>
     <% else %>
       <li><%= link_to 'ログイン', new_user_session_path %>
       <li><%= link_to 'ユーザー登録', new_user_registration_path %>
