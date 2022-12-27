@@ -1,0 +1,2 @@
+class Posing < ApplicationRecord
+end
