@@ -16,4 +16,6 @@ class Type < ActiveHash::Base
     { id: 12, name: 'その他のポーズ' }
   ]
 
+  include ActiveHash::Associations
+  has_many :posings
 end

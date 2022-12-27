@@ -17,4 +17,6 @@ class Category < ActiveHash::Base
     { id: 13, name: 'その他のカテゴリー' }
   ]
 
+  include ActiveHash::Associations
+  has_many :posings
 end

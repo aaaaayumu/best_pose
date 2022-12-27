@@ -13,4 +13,6 @@ class Group < ActiveHash::Base
     { id: 9, name: 'その他の団体' }
   ]
 
+  include ActiveHash::Associations
+  has_many :posings
 end
