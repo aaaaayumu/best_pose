@@ -41,89 +41,33 @@
     </div>
   </div>
 
-    <div class="posing_area">
-      <div class="posing_area_title">
-        ポージング一覧
+  <div class="posing_area">
+    <div class="posing_area_title">
+      ポージング一覧
+    </div>
+    <div class="posing_items">
+    <% @posings.each do |posing| %>
+      <div class="posing_item">
+        <div class="poster_name">
+          <a href="#"><%= posing.user.nickname %></a>さんのポージング
+        </div>
+        <%= image_tag posing.image, class: "posing_image"%>
+        <div class="contest_group">
+          出場団体： <%= posing.group.name %>
+        </div>
+        <div class="contest_category">
+          カテゴリー： <%= posing.category.name %>
+        </div>
+        <div class="posing_type">
+          ポーズの種類： <%= posing.type.name %>
+        </div>
+        <div class="show_btn">
+          <a href="#">詳細へ</a>
+        </div>
       </div>
-      <div class="posing_items">
-        <div class="posing_item">
-          <div class="poster_name">
-            ayumuさんのポージング
-          </div>
-          <%= image_tag "posing.jpeg", class: "posing_image"%>
-          <div class="contest_group">
-            出場団体： FWJ
-          </div>
-          <div class="contest_category">
-            カテゴリー： メンズフィジーク
-          </div>
-          <div class="posing_type">
-            ポーズの種類： フロントポーズ
-          </div>
-          <div class="show_btn">
-            <a href="#">詳細へ</a>
-          </div>
-        </div>
+    <% end %>
+    </div>
 
-        <div class="posing_item">
-          <div class="poster_name">
-            ayumuさんのポージング
-          </div>
-          <img src="#" class="posing_image">
-          <div class="contest_group">
-            出場団体： FWJ
-          </div>
-          <div class="contest_category">
-            カテゴリー： メンズフィジーク
-          </div>
-          <div class="posing_type">
-            ポーズの種類： フロントポーズ
-          </div>
-          <div class="show_btn">
-            <a href="#">詳細へ</a>
-          </div>
-        </div>
-
-        <div class="posing_item">
-          <div class="poster_name">
-            ayumuさんのポージング
-          </div>
-          <img src="#" class="posing_image">
-          <div class="contest_group">
-            出場団体： FWJ
-          </div>
-          <div class="contest_category">
-            カテゴリー： メンズフィジーク
-          </div>
-          <div class="posing_type">
-            ポーズの種類： フロントポーズ
-          </div>
-          <div class="show_btn">
-            <a href="#">詳細へ</a>
-          </div>
-        </div>
-
-        <div class="posing_item">
-          <div class="poster_name">
-            ayumuさんのポージング
-          </div>
-          <img src="#" class="posing_image">
-          <div class="contest_group">
-            出場団体： FWJ
-          </div>
-          <div class="contest_category">
-            カテゴリー： メンズフィジーク
-          </div>
-          <div class="posing_type">
-            ポーズの種類： フロントポーズ
-          </div>
-          <div class="show_btn">
-            <a href="#">詳細へ</a>
-          </div>
-        </div>
-        
-      </div>
-    <div>
   </div>
 
 </div>
