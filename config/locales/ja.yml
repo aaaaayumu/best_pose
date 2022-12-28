@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      posing: 商品
+    attributes:
+      posing:
+        image: ポージング画像
+        group_id: 団体
+        category_id: カテゴリー
+        type_id: ポーズの種類
