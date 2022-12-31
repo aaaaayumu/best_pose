@@ -1,0 +1,61 @@
+<%= render 'shared/first_header' %>
+
+<div class='posing_show_main'>
+  <div class="posing_show_area">
+    <div class='posing_show_title'>
+      ポージング詳細
+    </div>
+    <div class='posing_content'>
+      <div class="show_poster_name">
+        <a href="#"><%= @posing.user.nickname %></a>さんのポージング
+      </div>
+
+      <%= image_tag @posing.image, class: 'show_posing_image' %>
+
+      <% if user_signed_in? && current_user.id == @posing.user.id %>
+      <div class='edit_delete'>
+        <div class='edit_btn'>
+          <a href="#">編集</a>
+        </div>
+        <div class='delete_btn'>
+          <a href="#">削除</a>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="posing_info">
+        <div class="show_contest_group">
+          出場団体： <%= @posing.group.name %>
+        </div>
+        <div class="show_contest_category">
+          カテゴリー： <%= @posing.category.name %>
+        </div>
+        <div class="show_posing_type">
+          ポーズの種類： <%= @posing.type.name %>
+        </div>
+        <div class="poster_body_height">
+          身長： <%= @posing.user.body_height %> cm
+        </div>
+        <div class="poster_body_weight">
+          撮影時体重： <%= @posing.body_weight %> kg
+        </div>
+      </div>
+      <div class="remarks">
+        <div class="remarks_header">
+          ※備考
+        </div>
+        <div class="remarks_text">
+          <%= @posing.remarks %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%# コメントのエリア作る %>
+
+</div>
+
+
+
+
+<%= render 'shared/first_footer' %>

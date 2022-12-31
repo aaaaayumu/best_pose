@@ -1,19 +1,4 @@
-<header class="first_header">
-  <div class="header_logo">
-     <a href="/">Best Pose</a>
-  </div>
-  <ul class="header_lists">
-    <% if user_signed_in? %>
-      <li><a href="#">ユーザー編集</a></li>
-      <li><a href="#">マイページ</a></li>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      <li><%= link_to 'ポージング投稿', new_posing_path %></li>
-    <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path %>
-      <li><%= link_to 'ユーザー登録', new_user_registration_path %>
-    <% end %>
-  </ul>
-</header>
+<%= render 'shared/first_header' %>
 
 <div class="posing_index_main">
   <div class="current_user_name_area">
@@ -62,7 +47,7 @@
           ポーズの種類： <%= posing.type.name %>
         </div>
         <div class="show_btn">
-          <a href="#">詳細へ</a>
+          <%= link_to '詳細へ', posing_path(posing) %>
         </div>
       </div>
     <% end %>
@@ -72,8 +57,4 @@
 
 </div>
 
-<footer class="first_footer">
-  <div class="footer_logo">
-    BEST POSE
-  </div>
-</footer>
+<%= render 'shared/first_footer' %>
