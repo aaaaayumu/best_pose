@@ -55,6 +55,7 @@
   <div class="comment_area">
     <% if user_signed_in? %>
       <%= form_with(model: [@posing, @comment], local: true) do |form| %>
+        <%= render 'shared/error_messages', model: form.object %>
         <%= form.text_area :content, placeholder: "コメントする", class: "input_comment" %><br />
         <%= form.submit "コメントする", class: "comment_submit" %>
       <% end %>
