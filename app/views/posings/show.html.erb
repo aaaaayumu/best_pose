@@ -52,7 +52,19 @@
   </div>
 
   <%# コメントのエリア作る %>
+  <div class="comment_area">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@posing, @comment], local: true) do |form| %>
+        <%= form.text_area :content, placeholder: "コメントする", class: "input_comment" %><br />
+        <%= form.submit "コメントする", class: "comment_submit" %>
+      <% end %>
+    <% else %>
+      <strong><p class="note">※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    
+    <% #コメント一覧 %>
 
+  </div>
 </div>
 
 

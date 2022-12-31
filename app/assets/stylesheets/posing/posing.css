@@ -258,3 +258,34 @@
   margin-bottom: 40px;
 }
 
+.comment_area {
+  width: 70%;
+  margin: 50px auto 0;
+  background-color: #f0f0f0;
+  padding: 50px;
+}
+
+.input_comment {
+  width: 80%;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+  font-size: 16px;
+  padding: 4px;
+}
+
+.comment_submit {
+  display: block;
+  margin: 0 auto;
+  background-color: aqua;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.note {
+  color: red;
+  text-align: center;
+}
