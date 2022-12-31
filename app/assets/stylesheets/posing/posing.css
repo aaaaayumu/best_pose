@@ -144,3 +144,117 @@
   color: black;
   font-weight: 500;
 }
+
+/**************************************
+ポージング詳細ページ
+**************************************/
+.posing_show_main {
+  width: 100%;
+  background-color: #d2d2da;
+  padding: 50px 0;
+}
+
+.posing_show_area {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 50px 0;
+}
+
+.posing_show_title {
+  text-align: center;
+  font-size: 40px;
+  width: 350px;
+  margin: 0 auto;
+  color: black;
+  font-weight: 600;
+  background-color: yellow;
+  border-radius: 20px;
+  padding: 5px 0;
+}
+
+.posing_content {
+  margin-top: 40px;
+}
+
+.show_poster_name {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #022578;
+  font-weight: 400;
+}
+
+.show_poster_name a {
+  color: #022578;
+  text-decoration: none;
+}
+
+.show_posing_image {
+  width: 100%;
+  object-fit: contain;
+  height: 700px;
+}
+
+.edit_delete {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.edit_btn {
+  background-color: aqua;
+  width: 15%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.edit_btn a {
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+}
+
+.delete_btn {
+  background-color: red;
+  width: 15%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.delete_btn a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #f0f0f0;
+}
+
+.posing_info {
+  width: 80%;
+  margin: 20px auto 60px;
+  background-color: yellow;
+  padding: 30px;
+  font-size: 22px;
+}
+
+.remarks {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.remarks_header {
+  font-size: 22px;
+}
+
+.remarks_text {
+  margin-bottom: 40px;
+}
+

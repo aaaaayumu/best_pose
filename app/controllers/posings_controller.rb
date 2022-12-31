@@ -18,6 +18,10 @@ class PosingsController < ApplicationController
     end
   end
 
+  def show
+    @posing = Posing.find(params[:id])
+  end
+
   private
   
   def posing_params
