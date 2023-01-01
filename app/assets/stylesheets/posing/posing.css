@@ -289,3 +289,23 @@
   color: red;
   text-align: center;
 }
+
+.comments {
+  margin-top: 60px;
+}
+
+.comments_title {
+  color: #e56170;
+}
+
+.comment {
+  border: 1px solid black;
+  margin-bottom: 5px;
+  padding: 0 7px;
+}
+
+.comment_poster_name a {
+  text-decoration: none;
+  color: #022578;
+  font-weight: bold;
+}
