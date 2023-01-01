@@ -301,11 +301,47 @@
 .comment {
   border: 1px solid black;
   margin-bottom: 5px;
-  padding: 0 7px;
+  padding: 5px 7px;
 }
 
 .comment_poster_name a {
   text-decoration: none;
   color: #022578;
   font-weight: bold;
+}
+
+.comment_edit_delete {
+  display: flex;
+  justify-content: right;
+}
+
+.comment_edit_btn {
+  background-color: aqua;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+
+.comment_edit_btn a {
+  text-decoration: none;
+  color: black;
+}
+
+.comment_delete_btn {
+  background-color: red;
+  width: 70px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.comment_delete_btn a {
+  text-decoration: none;
+  color: #f0f0f0;
 }

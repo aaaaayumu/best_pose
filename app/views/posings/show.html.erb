@@ -74,6 +74,12 @@
             <p class="comment_text">
               <%= comment.content %>
             </p>
+            <% if comment.user.id == current_user.id && user_signed_in? %>
+              <div class="comment_edit_delete">
+                <div class="comment_edit_btn"><a href="#">編集</a></div>
+                <div class="comment_delete_btn"><a href="#">削除</a></div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       <% else %>
