@@ -20,6 +20,7 @@ class PosingsController < ApplicationController
 
   def show
     @posing = Posing.find(params[:id])
+    @comment = Comment.new
   end
 
   private
