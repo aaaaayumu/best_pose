@@ -24,6 +24,19 @@ class PosingsController < ApplicationController
     @comments = @posing.comments.includes(:user)
   end
 
+  def edit
+    @posing = Posing.find(params[:id])
+  end
+
+  def update
+    @posing = Posing.find(params[:id])
+    if @posing.update(posing_params)
+      redirect_to posing_path(@posing)
+    else
+      render :edit
+    end
+  end
+
   private
   
   def posing_params
