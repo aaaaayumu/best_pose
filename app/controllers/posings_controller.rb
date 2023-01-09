@@ -1,6 +1,7 @@
 class PosingsController < ApplicationController
-  before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new, :edit]
   before_action :set_posing, only: [:show, :edit, :update]
+  before_action :move_index, only: [:edit]
 
   def index
     @posings = Posing.includes(:user).order("created_at DESC")
@@ -43,5 +44,9 @@ class PosingsController < ApplicationController
 
   def set_posing
     @posing = Posing.find(params[:id])
+  end
+
+  def move_index
+    return redirect_to root_path if current_user.id != @posing.user.id
   end
 end
