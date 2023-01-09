@@ -15,7 +15,7 @@
       <% if user_signed_in? && current_user.id == @posing.user.id %>
       <div class='edit_delete'>
         <div class='edit_btn'>
-          <a href="#">編集</a>
+          <%= link_to '編集', edit_posing_path(@posing) %>
         </div>
         <div class='delete_btn'>
           <a href="#">削除</a>
