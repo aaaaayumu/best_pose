@@ -21,6 +21,7 @@ class PosingsController < ApplicationController
   def show
     @posing = Posing.find(params[:id])
     @comment = Comment.new
+    @comments = @posing.comments.includes(:user)
   end
 
   private

@@ -63,12 +63,30 @@
       <strong><p class="note">※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
     
-    <% #コメント一覧 %>
-
+    <div class="comments">
+      <h4 class="comments_title">＜コメント一覧＞</h4>
+      <% if @comments.present? %>
+        <% @comments.each do |comment| %>
+          <div class="comment">
+            <div class="comment_poster_name">
+              <a href="#"><%= comment.user.nickname %></a>
+            </div>
+            <p class="comment_text">
+              <%= comment.content %>
+            </p>
+            <% if comment.user.id == current_user.id && user_signed_in? %>
+              <div class="comment_edit_delete">
+                <div class="comment_edit_btn"><a href="#">編集</a></div>
+                <div class="comment_delete_btn"><a href="#">削除</a></div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントはまだありません。 ※※※</p></strong>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-
 
 <%= render 'shared/first_footer' %>
