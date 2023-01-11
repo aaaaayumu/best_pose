@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: :edit
-  before_action :set_posing, only: [:create, :edit, :update]
-  before_action :set_comment, only: [:edit, :update]
-  before_action :move_index, only: :edit
+  before_action :set_posing, only: [:create, :edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :move_index, only: [:edit, :destroy]
 
   def create
     @comment = Comment.new(comment_params)
@@ -22,6 +22,11 @@ class CommentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to posing_path(@posing)
   end
 
   private
