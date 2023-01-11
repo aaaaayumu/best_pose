@@ -1,7 +1,7 @@
 class PosingsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
-  before_action :set_posing, only: [:show, :edit, :update]
-  before_action :move_index, only: [:edit]
+  before_action :set_posing, only: [:show, :edit, :update, :destroy]
+  before_action :move_index, only: [:edit, :destroy]
 
   def index
     @posings = Posing.includes(:user).order("created_at DESC")
@@ -34,6 +34,11 @@ class PosingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @posing.destroy
+    redirect_to root_path
   end
 
   private
