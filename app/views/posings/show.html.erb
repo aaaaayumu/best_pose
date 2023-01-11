@@ -18,7 +18,7 @@
           <%= link_to '編集', edit_posing_path(@posing) %>
         </div>
         <div class='delete_btn'>
-          <a href="#">削除</a>
+          <%= link_to '削除', posing_path(@posing), method: :delete, data: {confirm: "ポージングを削除しますか？"} %>
         </div>
       </div>
       <% end %>
@@ -51,7 +51,6 @@
     </div>
   </div>
 
-  <%# コメントのエリア作る %>
   <div class="comment_area">
     <% if user_signed_in? %>
       <%= form_with(model: [@posing, @comment], local: true) do |form| %>
