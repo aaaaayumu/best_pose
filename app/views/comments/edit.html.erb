@@ -1,0 +1,28 @@
+<%= render 'shared/second_header' %>
+
+<%= form_with model: [@posing, @comment], class: 'form', local: true do |f| %>
+  <div class="form_wrapper">
+    <div class="form_header">
+      コメント編集
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    
+    <div class="form_main">
+      <div class="form_group">
+        <%= f.text_area :content, class: 'input_comment' %>
+      </div>
+      
+    </div>
+
+    <div class="form_footer">
+      <%= f.submit 'コメント編集', class: 'form_submit' %><br />
+      <div class="return_btn">
+        <%= link_to '戻る', posing_path(@posing) %>
+      </div>
+    </div>
+  </div>
+  
+<% end %>
+
+<%= render 'shared/second_footer' %>
