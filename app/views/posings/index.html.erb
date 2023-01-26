@@ -4,7 +4,7 @@
   <div class="current_user_name_area">
     <div class="current_user_name">
       <% if user_signed_in? %>
-        ようこそ <a href="#"><%= current_user.nickname %></a> さん
+        ようこそ <%= link_to current_user.nickname, user_path(current_user) %> さん
       <% else %>
         未ログイン状態です
       <% end %>
@@ -34,7 +34,7 @@
     <% @posings.each do |posing| %>
       <div class="posing_item">
         <div class="poster_name">
-          <a href="#"><%= posing.user.nickname %></a>さんのポージング
+          <%= link_to posing.user.nickname, user_path(posing.user) %>さんのポージング
         </div>
         <%= image_tag posing.image, class: "posing_image"%>
         <div class="contest_group">

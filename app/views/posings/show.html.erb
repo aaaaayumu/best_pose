@@ -7,7 +7,7 @@
     </div>
     <div class='posing_content'>
       <div class="show_poster_name">
-        <a href="#"><%= @posing.user.nickname %></a>さんのポージング
+        <%= link_to @posing.user.nickname, user_path(@posing.user) %>さんのポージング
       </div>
 
       <%= image_tag @posing.image, class: 'show_posing_image' %>
@@ -68,7 +68,7 @@
         <% @comments.each do |comment| %>
           <div class="comment">
             <div class="comment_poster_name">
-              <a href="#"><%= comment.user.nickname %></a>
+              <%= link_to comment.user.nickname, user_path(comment.user) %>
             </div>
             <p class="comment_text">
               <%= comment.content %>
