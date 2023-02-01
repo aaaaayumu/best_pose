@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :password_confimation, :body_height, :body_weight, :self_introduction)
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :body_height, :body_weight, :self_introduction)
   end
 
   def move_index
