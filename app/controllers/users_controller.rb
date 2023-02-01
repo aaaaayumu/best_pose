@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :move_index, only: :edit
 
   def edit
   end
@@ -19,5 +20,9 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:nickname, :email, :password, :password_confimation, :body_height, :body_weight, :self_introduction)
+  end
+
+  def move_index
+    redirect_to root_path if current_user.id != params[:id].to_i
   end
 end
