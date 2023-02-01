@@ -1,0 +1,50 @@
+/*****************************
+ユーザー詳細ページ（マイページ）
+*****************************/
+
+.user_show_main {
+  width: 100%;
+  background-color: #d2d2da;
+}
+
+.user_show_title {
+  font-size: 35px;
+  text-align: center;
+  padding: 30px 0 50px;
+  color: #022578;
+}
+
+.profile {
+  width: 50%;
+  margin: 0 auto;
+}
+.profile_title {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.user_info {
+  border: 3px solid black;
+}
+
+.body_info {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px 0 15px;
+}
+
+.user_body_height {
+  font-size: 20px;
+}
+
+.user_body_weight {
+  font-size: 20px;
+}
+
+.self_introduction_title {
+  font-size: 18px;
+}
+
+.introduction_content {
+  margin: 0 5px 5px 5px;
+}

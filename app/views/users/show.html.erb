@@ -1,0 +1,69 @@
+<%= render 'shared/second_header' %>
+
+<div class="user_show_main">
+  <div class="user_show_title">
+    <%= @user.nickname %>さんのマイページ
+  </div>
+  <div class="profile">
+    <div class="profile_title">
+      プロフィール
+    </div>
+    <div class="user_info">
+      <div class="body_info">
+        <% if @user.body_height.present? %>
+          <div class="user_body_height">身長： <%= @user.body_height %> cm</div>
+        <% else %>
+          <div class="user_body_height">身長： 未設定</div>
+        <% end %>
+        <% if @user.body_weight.present? %>
+          <div class="user_body_weight">体重： <%= @user.body_weight %> kg</div>
+        <% else %>
+          <div class="user_body_weight">体重： 未設定</div>
+        <% end %>
+      </div>
+      <div class="self_introduction">
+        <div class="self_introduction_title">
+          ＜自己紹介文＞
+        </div>
+        <p class="introduction_content">
+          <% if @user.self_introduction.present? %>
+            <%= @user.self_introduction %>
+          <% else %>
+            自己紹介文を設定していません。
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="posing_area">
+    <div class="posing_area_title">
+      ポージング一覧
+    </div>
+    <div class="posing_items">
+    <% @posings.each do |posing| %>
+      <div class="posing_item">
+        <div class="poster_name">
+          <%= link_to posing.user.nickname, user_path(posing.user) %>さんのポージング
+        </div>
+        <%= image_tag posing.image, class: "posing_image"%>
+        <div class="contest_group">
+          出場団体： <%= posing.group.name %>
+        </div>
+        <div class="contest_category">
+          カテゴリー： <%= posing.category.name %>
+        </div>
+        <div class="posing_type">
+          ポーズの種類： <%= posing.type.name %>
+        </div>
+        <div class="show_btn">
+          <%= link_to '詳細へ', posing_path(posing) %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<%= render 'shared/second_footer' %>
