@@ -3,11 +3,11 @@ class LikesController < ApplicationController
   before_action :comment_params, only: [:create, :destroy]
 
   def create
-    Like.create(user_id: current_user.id, post_id: @comment.id)
+    Like.create(user_id: current_user.id, comment_id: @comment.id)
   end
 
   def destroy
-    like = Like.find_by(user_id: current_user.id, post_id: @comment.id)
+    like = Like.find_by(user_id: current_user.id, comment_id: @comment.id)
     like.destroy
   end
 
