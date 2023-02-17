@@ -1,0 +1,14 @@
+<% if !user_signed_in? %>
+  <i class="fa fa-heart like-btn"></i>
+  <%= comment.likes.length %>
+<% elsif current_user.liked_by?(comment.id) %>
+  <%= link_to posing_comment_like_path(comment.posing.id, comment, comment.likes), class: "like-link", method: :delete, remote: true do %>
+    <i class="fa fa-heart unlike-btn"></i>
+  <% end %>
+  <%= comment.likes.length %>
+<% else %>
+  <%= link_to posing_comment_likes_path(comment.posing.id, comment), class: "like-link", method: :post, remote: true do %>
+    <i class="fa fa-heart like-btn"></i>
+  <% end %>
+  <%= comment.likes.length %>
+<% end %>

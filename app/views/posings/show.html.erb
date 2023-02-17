@@ -73,6 +73,9 @@
             <p class="comment_text">
               <%= comment.content %>
             </p>
+            <div id = "like_<%= comment.id %>">
+              <%= render partial: "likes/like", locals: { comment: comment } %>
+            </div>
             <% if user_signed_in? && comment.user.id == current_user.id %>
               <div class="comment_edit_delete">
                 <div class="comment_edit_btn"><%= link_to '編集', edit_posing_comment_path(@posing, comment) %></div>
