@@ -18,6 +18,6 @@ class User < ApplicationRecord
   end
 
   def liked_by?(comment_id)
-    likes.where(post_id: post_id).exists?
+    likes.where(comment_id: comment_id).exists?
   end
 end
