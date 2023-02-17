@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_31_030305) do
+ActiveRecord::Schema.define(version: 2023_02_09_022225) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 2022_12_31_030305) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["posing_id"], name: "index_comments_on_posing_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "comment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,5 +83,6 @@ ActiveRecord::Schema.define(version: 2022_12_31_030305) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posings"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "users"
   add_foreign_key "posings", "users"
 end
