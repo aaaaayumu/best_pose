@@ -16,4 +16,8 @@ class User < ApplicationRecord
   def password_errors_blank?
     errors[:password].blank?
   end
+
+  def liked_by?(comment_id)
+    likes.where(post_id: post_id).exists?
+  end
 end
