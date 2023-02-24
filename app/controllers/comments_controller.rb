@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comments = @posing.comments.includes(:user)
     if @comment.save
       redirect_to posing_path(@comment.posing.id)
     else
